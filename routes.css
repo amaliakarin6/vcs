@@ -1,0 +1,262 @@
+/* Routes page - timetable and line detail */
+
+.page-hero {
+  background: var(--ink);
+  color: #ffffff;
+  padding: clamp(68px, 8vw, 112px) 0;
+}
+
+.page-hero-inner {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.page-hero .eyebrow {
+  color: var(--brass);
+}
+
+.page-hero h1 {
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  font-weight: 800;
+  line-height: 1.02;
+  margin: 22px 0 20px;
+  max-width: 18ch;
+}
+
+.page-hero .section-lede {
+  color: #c9cee6;
+  max-width: 52ch;
+}
+
+.page-hero-actions {
+  margin-top: 30px;
+}
+
+.timetable {
+  background: var(--page);
+  padding: clamp(64px, 8vw, 104px) 0;
+}
+
+.timetable-inner,
+.route-details-inner,
+.reading-inner {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.timetable-head {
+  margin-bottom: 32px;
+}
+
+.timetable-head h2 {
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+  margin-top: 16px;
+}
+
+.scroll-hint {
+  display: none;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--slate);
+  margin-top: 12px;
+}
+
+.board-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.timetable-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: #e6e9f7;
+}
+
+.timetable-table caption {
+  text-align: left;
+  padding: 0 14px 14px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.timetable-table th,
+.timetable-table td {
+  padding: 14px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.timetable-table thead th {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #858cb8;
+  border-bottom-color: rgba(255, 255, 255, 0.28);
+}
+
+.timetable-table tbody th {
+  color: var(--brass);
+  font-weight: 600;
+}
+
+.timetable-table .route-cell {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.timetable-table .time-cell,
+.timetable-table .days-cell,
+.timetable-table .fare-cell {
+  color: #c9cee6;
+}
+
+.timetable-table tbody tr:last-child th,
+.timetable-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.board-status {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 3px 7px;
+  background: var(--brass);
+  color: var(--ink);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.board-note {
+  margin-top: 18px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--slate);
+}
+
+.route-details {
+  background: var(--panel);
+  padding: clamp(72px, 9vw, 120px) 0;
+}
+
+.route-details .ticket {
+  display: flex;
+  flex-direction: column;
+}
+
+.route-details .ticket-view {
+  margin: 20px 0 22px;
+  font-size: 14px;
+  color: var(--slate);
+  max-width: 40ch;
+}
+
+.route-details .ticket-bottom {
+  margin-top: auto;
+}
+
+.reading {
+  background: var(--page);
+  padding: clamp(64px, 8vw, 100px) 0;
+}
+
+.reading-inner {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(36px, 6vw, 80px);
+  align-items: start;
+}
+
+.reading-head h2 {
+  font-size: clamp(2rem, 3.4vw, 2.9rem);
+  margin-top: 18px;
+}
+
+.reading-list {
+  margin: 0;
+  border-top: 1px solid var(--line);
+}
+
+.reading-list div {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.reading-list dt {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate);
+  padding-top: 3px;
+}
+
+.reading-list dd {
+  margin: 0;
+  font-size: 15px;
+  color: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .scroll-hint {
+    display: block;
+  }
+
+  .reading-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .strip-inner a,
+  .site-footer .footer-col a,
+  .text-link,
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 620px) {
+  .page-hero-inner,
+  .timetable-inner,
+  .route-details-inner,
+  .reading-inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2.4rem, 10vw, 3.2rem);
+  }
+
+  .board-scroll {
+    padding: 16px 14px;
+    box-shadow: 8px 8px 0 rgba(240, 169, 59, 0.14);
+  }
+
+  .board-meta {
+    display: none;
+  }
+
+  .reading-list div {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
